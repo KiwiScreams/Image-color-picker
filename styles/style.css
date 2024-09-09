@@ -101,12 +101,12 @@ p {
       flex-direction: column;
     }
     #image-preview {
-      width: 80%;
+      width: 90%;
       height: 200px;
       margin: auto;
     }
     #color-wheel {
-      width: 80%;
+      width: 90%;
       margin: auto;
       box-shadow: none;
     }
