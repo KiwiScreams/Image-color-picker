@@ -1,6 +1,9 @@
 const imageUploadInput = document.getElementById("image-upload");
 const imagePreviewContainer = document.getElementById("image-preview");
 const colorPickerInput = document.getElementById("color-picker");
+const colorWheel = document.getElementById("color-wheel");
+const colorDot = document.getElementById("color-dot");
+
 imageUploadInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
   const reader = new FileReader();
@@ -9,15 +12,18 @@ imageUploadInput.addEventListener("change", (e) => {
   });
   reader.readAsDataURL(file);
 });
+
 colorPickerInput.addEventListener("input", (e) => {
   const color = e.target.value;
-  imagePreviewContainer.style.filter = `hue-rotate(${color})`;
+  imagePreviewContainer.style.backgroundColor = color;
 });
-const colorWheel = document.getElementById("color-wheel");
 
-colorWheel.addEventListener("click", (e) => {
+colorWheel.addEventListener("mousemove", (e) => {
   const x = e.clientX - colorWheel.offsetLeft;
   const y = e.clientY - colorWheel.offsetTop;
+
+  colorDot.style.left = `${x}px`;
+  colorDot.style.top = `${y}px`;
 
   const hue =
     (Math.atan2(
@@ -39,8 +45,7 @@ colorWheel.addEventListener("click", (e) => {
   const rgb = hslToRgb(hue, saturation, lightness);
 
   colorPickerInput.value = rgbToHex(rgb);
-
-  imagePreviewContainer.style.filter = `hue-rotate(${rgbToHex(rgb)})`;
+  imagePreviewContainer.style.backgroundColor = rgbToHex(rgb);
 });
 
 function hslToRgb(h, s, l) {
