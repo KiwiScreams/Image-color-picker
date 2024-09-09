@@ -6,11 +6,22 @@ const colorWheel = document.getElementById("color-wheel");
 const colorDot = document.getElementById("color-dot");
 const selectedColorElement = document.getElementById("selected-color");
 const imagePreviewDiv = document.getElementById("image-preview");
+const copyColorBtn = document.getElementById("copy-color-btn");
 imageUploadInput.addEventListener("change", () => {
   if (imageUploadInput.files.length > 0) {
     noImageSelectedPara.style.display = "none";
   } else {
     noImageSelectedPara.style.display = "block";
+  }
+});
+const selectedColorDiv = document.getElementById("selected-color");
+const flexDiv = document.querySelector(".flex");
+
+imageUploadInput.addEventListener("change", () => {
+  if (imageUploadInput.files.length > 0) {
+    flexDiv.classList.remove("hide");
+  } else {
+    flexDiv.classList.add("hide");
   }
 });
 let img;
@@ -62,3 +73,9 @@ function rgbToHex(rgb) {
     .toString(16)
     .slice(1)}`;
 }
+
+copyColorBtn.addEventListener("click", () => {
+  const colorValue = colorPickerInput.value;
+  navigator.clipboard.writeText(colorValue);
+  alert(`Copied: ${colorValue}`);
+});
