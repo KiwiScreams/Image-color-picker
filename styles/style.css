@@ -104,6 +104,13 @@ p {
   padding: 10px;
   border: 1px solid black;
 }
+button,
+a {
+  cursor: pointer;
+}
+.hide {
+  display: none;
+}
 @media screen and (max-width: 1200px) {
   .core-section {
     width: 96%;
@@ -133,9 +140,4 @@ p {
     margin: auto;
     box-shadow: none;
   }
-}
-
-button, a
-{
-    cursor: pointer;
 }
