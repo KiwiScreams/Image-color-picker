@@ -93,4 +93,6 @@ input#image-upload
 p
 {
     text-align: center;
+    margin: 50px;
+    font-weight: bold;
 }
