@@ -14,6 +14,7 @@ imageUploadInput.addEventListener("change", () => {
     noImageSelectedPara.style.display = "block";
   }
 });
+
 const selectedColorDiv = document.getElementById('selected-color');
 const flexDiv = document.querySelector('.flex');
 
