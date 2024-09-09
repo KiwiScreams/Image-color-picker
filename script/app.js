@@ -24,6 +24,14 @@ imageUploadInput.addEventListener("change", () => {
     flexDiv.classList.add("hide");
   }
 });
+function selectButton(button) {
+  const buttons = document.querySelectorAll(".format-button");
+  buttons.forEach((btn) => btn.classList.remove("selected"));
+  button.classList.add("selected");
+  button.style.backgroundColor = "#ccc";
+  button.style.color = "#fff";
+  button.style.border = "1px solid #333";
+}
 let img;
 let canvas;
 let ctx;
@@ -87,18 +95,22 @@ const cmykBtn = document.getElementById("cmyk-btn");
 let selectedColor = "";
 
 rgbBtn.addEventListener("click", () => {
+  selectButton(rgbBtn);
   convertColorFormat("rgb");
 });
 
 hexBtn.addEventListener("click", () => {
+  selectButton(hexBtn);
   convertColorFormat("hex");
 });
 
 hslBtn.addEventListener("click", () => {
+  selectButton(hslBtn);
   convertColorFormat("hsl");
 });
 
 cmykBtn.addEventListener("click", () => {
+  selectButton(cmykBtn);
   convertColorFormat("cmyk");
 });
 
