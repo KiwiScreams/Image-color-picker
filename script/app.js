@@ -75,7 +75,7 @@ function rgbToHex(rgb) {
 }
 
 copyColorBtn.addEventListener("click", () => {
-  const colorValue = colorPickerInput.value;
+  const colorValue = selectedColor;
   navigator.clipboard.writeText(colorValue);
   alert(`Copied: ${colorValue}`);
 });
