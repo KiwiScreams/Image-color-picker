@@ -6,6 +6,7 @@ const colorWheel = document.getElementById("color-wheel");
 const colorDot = document.getElementById("color-dot");
 const selectedColorElement = document.getElementById("selected-color");
 const imagePreviewDiv = document.getElementById("image-preview");
+const copyColorBtn = document.getElementById("copy-color-btn");
 imageUploadInput.addEventListener("change", () => {
   if (imageUploadInput.files.length > 0) {
     noImageSelectedPara.style.display = "none";
@@ -62,3 +63,9 @@ function rgbToHex(rgb) {
     .toString(16)
     .slice(1)}`;
 }
+
+copyColorBtn.addEventListener("click", () => {
+  const colorValue = colorPickerInput.value;
+  navigator.clipboard.writeText(colorValue);
+  alert(`Copied: ${colorValue}`);
+});
