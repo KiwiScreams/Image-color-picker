@@ -24,6 +24,7 @@ imageUploadInput.addEventListener("change", () => {
     flexDiv.classList.add("hide");
   }
 });
+
 let img;
 let canvas;
 let ctx;
@@ -75,7 +76,7 @@ function rgbToHex(rgb) {
 }
 
 copyColorBtn.addEventListener("click", () => {
-  const colorValue = colorPickerInput.value;
+  const colorValue = selectedColor;
   navigator.clipboard.writeText(colorValue);
   alert(`Copied: ${colorValue}`);
 });
@@ -86,7 +87,6 @@ const cmykBtn = document.getElementById("cmyk-btn");
 
 let selectedColor = "";
 
-// Add event listeners to the format buttons
 rgbBtn.addEventListener("click", () => {
   convertColorFormat("rgb");
 });
@@ -103,7 +103,6 @@ cmykBtn.addEventListener("click", () => {
   convertColorFormat("cmyk");
 });
 
-// Function to convert the color format
 function convertColorFormat(format) {
   const colorInput = document.getElementById("color-picker");
   const selectedColorValue = colorInput.value;
@@ -130,7 +129,6 @@ function convertColorFormat(format) {
   selectedColor = convertedColor;
 }
 
-// Helper functions to convert color formats
 function rgbToRgb(rgb) {
   return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
 }
@@ -165,7 +163,6 @@ function rgbToCmyk(rgb) {
   return `cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`;
 }
 
-// Helper functions to convert RGB to HSL and CMYK
 function rgbToHslValues(r, g, b) {
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);

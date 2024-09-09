@@ -106,10 +106,18 @@ p {
   align-items: center;
 }
 #copy-color-btn {
-  background-color: var(--white-clr);
+  background-color: var(--black-clr);
   border-radius: 10px;
   padding: 10px;
+  color: var(--white-clr);
   border: 1px solid var(--black-clr);
+}
+button
+{
+    background-color: var(--white-clr);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid var(--black-clr);
 }
 button,
 a {
@@ -120,7 +128,7 @@ a {
 }
 button:hover,
 .custom-file-upload:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 @media screen and (max-width: 1200px) {
   .core-section {
