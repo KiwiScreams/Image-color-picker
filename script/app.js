@@ -14,14 +14,14 @@ imageUploadInput.addEventListener("change", () => {
     noImageSelectedPara.style.display = "block";
   }
 });
-const selectedColorDiv = document.getElementById("selected-color");
-const flexDiv = document.querySelector(".flex");
+const selectedColorDiv = document.getElementById('selected-color');
+const flexDiv = document.querySelector('.flex');
 
-imageUploadInput.addEventListener("change", () => {
+imageUploadInput.addEventListener('change', () => {
   if (imageUploadInput.files.length > 0) {
-    flexDiv.classList.remove("hide");
+    flexDiv.classList.remove('hide');
   } else {
-    flexDiv.classList.add("hide");
+    flexDiv.classList.add('hide');
   }
 });
 let img;
