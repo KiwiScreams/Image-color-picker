@@ -1,9 +1,18 @@
 const imageUploadInput = document.getElementById("image-upload");
 const imagePreviewContainer = document.getElementById("image-preview");
 const colorPickerInput = document.getElementById("color-picker");
+const noImageSelectedPara = document.getElementById("no-image-selected");
 const colorWheel = document.getElementById("color-wheel");
 const colorDot = document.getElementById("color-dot");
 const selectedColorElement = document.getElementById("selected-color");
+const imagePreviewDiv = document.getElementById("image-preview");
+imageUploadInput.addEventListener("change", () => {
+  if (imageUploadInput.files.length > 0) {
+    noImageSelectedPara.style.display = "none";
+  } else {
+    noImageSelectedPara.style.display = "block";
+  }
+});
 let img;
 let canvas;
 let ctx;
