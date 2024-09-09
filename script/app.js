@@ -16,8 +16,8 @@ imageUploadInput.addEventListener("change", (e) => {
 });
 
 colorWheel.addEventListener("mousemove", (e) => {
-  const x = e.clientX - colorWheel.offsetLeft;
-  const y = e.clientY - colorWheel.offsetTop;
+  const x = e.offsetX;
+  const y = e.offsetY;
 
   colorDot.style.left = `${x}px`;
   colorDot.style.top = `${y}px`;
