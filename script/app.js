@@ -4,6 +4,14 @@ const colorPickerInput = document.getElementById("color-picker");
 const colorWheel = document.getElementById("color-wheel");
 const colorDot = document.getElementById("color-dot");
 const selectedColorElement = document.getElementById("selected-color");
+const imagePreviewDiv = document.getElementById("image-preview");
+imageUploadInput.addEventListener("change", () => {
+  if (imageUploadInput.files.length > 0) {
+    imagePreviewDiv.style.visibility = "visible";
+  } else {
+    imagePreviewDiv.style.visibility = "hidden";
+  }
+});
 let img;
 let canvas;
 let ctx;
