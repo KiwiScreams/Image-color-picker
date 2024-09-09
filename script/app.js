@@ -4,7 +4,9 @@ const colorPickerInput = document.getElementById("color-picker");
 const colorWheel = document.getElementById("color-wheel");
 const colorDot = document.getElementById("color-dot");
 const selectedColorElement = document.getElementById("selected-color");
-
+let img;
+let canvas;
+let ctx;
 imageUploadInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
   const reader = new FileReader();
